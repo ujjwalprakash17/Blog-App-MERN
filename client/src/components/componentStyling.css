@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inconsolata:wght@200..900&family=Satisfy&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+.active {
+  font-weight: bold;
+  color: #1f55ee !important;
+}
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: blue;
+}
+
+.website-bg-color {
+  background-color: white;
+}
+
+.card-color {
+  background-color: #eeedf7;
+}
+
+.ff-choice1 {
+  font-family: "Playfair Display", serif;
+}
+
+.ff-choice2 {
+  font-family: "Satisfy", cursive;
+}
+
+.ff-choice3 {
+  font-family: "Source Code Pro", monospace;
+}
+
+.ff-choice4 {
+  font-family: "Inconsolata", monospace;
+}
+
+/* Ensure the title is truncated with ellipsis */
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Ensure the content is clamped to 3 lines with ellipsis */
+.line-clamp-3 {
+  display: -webkit-box;
+  /* -webkit-line-clamp: 3; */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}

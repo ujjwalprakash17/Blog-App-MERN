@@ -1,0 +1,17 @@
+.sidebar-toggle {
+  @apply block;
+}
+
+@media (min-width: 1024px) {
+  .sidebar-toggle {
+    @apply hidden;
+  }
+
+  #logo-sidebar {
+    @apply translate-x-0;
+  }
+}
+
+.myColor{
+    background-color: #eeedf7;
+}
