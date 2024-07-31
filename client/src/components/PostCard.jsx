@@ -22,7 +22,7 @@ const PostCard = ({ id, title, content, author }) => {
     );
     if (confirmDelete) {
       const response = await axios.delete(
-        `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/post/delete/${id}`
+        `https://blog-app-api-liart.vercel.app/api/post/delete/${id}`
       );
       (response.data);
       // navigate(`/api/allposts`);

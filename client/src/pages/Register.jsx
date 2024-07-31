@@ -14,7 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 const debouncedCheckUsername = debounce(async (username, setFeedback) => {
   try {
     const response = await axios.get(
-      `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/check-username`,
+      `https://blog-app-api-liart.vercel.app/api/auth/check-username`,
       {
         params: { username: username },
       }
@@ -23,7 +23,7 @@ const debouncedCheckUsername = debounce(async (username, setFeedback) => {
     if (data.isUnique) {
       setFeedback("Username is available");
     } else {
-      setFeedback("Already taken! Try another");
+      // setFeedback("Already taken! Try another");
     }
   } catch (error) {
     console.log("Error: ", error);
@@ -35,7 +35,7 @@ const debouncedCheckUsername = debounce(async (username, setFeedback) => {
 const throttledCheckUsername = throttle(async (username, setFeedback) => {
   try {
     const response = await axios.get(
-      `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/check-username`,
+      `https://blog-app-api-liart.vercel.app/api/auth/check-username`,
       {
         params: { username: username },
       }
@@ -91,10 +91,10 @@ const Register = () => {
     // console.log(data);
       setIsClicked(true);
     try {
-      const url = "https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/register";
+      const url = "https://blog-app-api-liart.vercel.app/api/auth/register";
       const result = await axios.post(url, data);
       const obj = result.data.user;
-      obj.profileImg = obj.profileImg.toString("base64");
+      // obj.profileImg = obj.profileImg.toString("base64");
       // console.log(result);
       //set redux state here
       dispatch(setUserDetail(obj));
@@ -116,11 +116,13 @@ const Register = () => {
         transition: Flip,
         onClose: () => {
           // Redirect to the dashboard after the toast closes
-          if (result.statusText === "OK") {
+          console.log(result.statusText);
+          if (result.status === 200) {
             navigate("/dashboard");
           }
         },
       });
+      
     } catch (error) {
       toast.error(error.response.data, {
         position: "top-right",

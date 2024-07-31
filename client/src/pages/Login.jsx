@@ -28,7 +28,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     setIsClicked(true);
     try {
-      const url = "https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/login";
+      const url = "https://blog-app-api-liart.vercel.app/api/auth/login";
       const result = await axios.post(url, data);
       const obj = result.data.user;
       //set redux state here
@@ -51,7 +51,7 @@ const Login = () => {
         transition: Flip,
         onClose: () => {
           // Redirect to the dashboard after the toast closes
-          if (result.statusText === "OK") {
+          if (result.status === 200) {
             navigate("/dashboard");
           }
         },

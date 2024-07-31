@@ -15,7 +15,7 @@ const AllPosts = () => {
     const fetchAllPosts = async () => {
       try {
         const result = await axios.get(
-          `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/post/allposts/${userDetail.username}` // Corrected URL format
+          `https://blog-app-api-liart.vercel.app/api/post/allposts/${userDetail.username}` // Corrected URL format
         );
         setAllPosts(result.data);
       } catch (error) {
