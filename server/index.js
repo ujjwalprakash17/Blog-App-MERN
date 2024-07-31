@@ -22,6 +22,11 @@ app.use(express.urlencoded({ limit: '2mb', extended: true }));//used to parse ur
 //Connecting to MongoDB database
 connectDB();
 
+//Home route 
+app.get("/", (req, res)=> {
+    res.send("Ujjwal Welcomes you to the MERN Stack Blogging Application");
+});
+
 //Routes to handle authentication requests
 app.use('/api/auth/', userAuthRoutes);
 
