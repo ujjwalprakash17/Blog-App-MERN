@@ -21,7 +21,7 @@ const EditPost = () => {
     const fetchPost = async () => {
       try {
         const result = await axios.get(
-          `http://localhost:5500/api/post/viewpost/${postId}`
+          `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/post/viewpost/${postId}`
         );
         const { title, content } = result.data;
         setValue("title", title);  // Set form value for title
@@ -67,7 +67,7 @@ const EditPost = () => {
     data.username = userDetail.username;
     try {
       const result = await axios.post(
-        `http://localhost:5500/api/post/edit/${postId}`,
+        `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/post/edit/${postId}`,
         data
       );
       toast.success(result.data, {

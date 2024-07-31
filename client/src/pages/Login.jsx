@@ -28,7 +28,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     setIsClicked(true);
     try {
-      const url = "http://localhost:5500/api/auth/login";
+      const url = "https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/login";
       const result = await axios.post(url, data);
       const obj = result.data.user;
       //set redux state here

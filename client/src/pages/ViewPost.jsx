@@ -18,7 +18,7 @@ const ViewPost = () => {
     const fetchPost = async () => {
       try {
         const result = await axios.get(
-          `http://localhost:5500/api/post/viewpost/${postId}`
+          `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/post/viewpost/${postId}`
         );
         setPost(result.data);
       } catch (error) {

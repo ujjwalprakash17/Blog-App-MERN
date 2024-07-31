@@ -28,7 +28,7 @@ const UpdateProfile = () => {
   const userImg = userDetail.profileImg;
   const username = userDetail.username;
 
-  const url = "http://localhost:5500/api/user/details";
+  const url = "https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/user/details";
   //update user profile image
   const [profileImage, setProfileImage] = useState(userImg);
 

@@ -62,7 +62,7 @@ const CreatePost2 = () => {
     data.username = userDetail.username;
     try {
       const result = await axios.post(
-        "http://localhost:5500/api/post/create",
+        "https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/post/create",
         data
       );
       // console.log(result);

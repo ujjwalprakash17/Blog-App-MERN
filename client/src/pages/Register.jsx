@@ -14,7 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 const debouncedCheckUsername = debounce(async (username, setFeedback) => {
   try {
     const response = await axios.get(
-      `http://localhost:5500/api/auth/check-username`,
+      `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/check-username`,
       {
         params: { username: username },
       }
@@ -35,7 +35,7 @@ const debouncedCheckUsername = debounce(async (username, setFeedback) => {
 const throttledCheckUsername = throttle(async (username, setFeedback) => {
   try {
     const response = await axios.get(
-      `http://localhost:5500/api/auth/check-username`,
+      `https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/check-username`,
       {
         params: { username: username },
       }
@@ -91,7 +91,7 @@ const Register = () => {
     // console.log(data);
       setIsClicked(true);
     try {
-      const url = "http://localhost:5500/api/auth/register";
+      const url = "https://vercel.com/ujjwal-prakashs-projects/blog-app-api/api/auth/register";
       const result = await axios.post(url, data);
       const obj = result.data.user;
       obj.profileImg = obj.profileImg.toString("base64");
