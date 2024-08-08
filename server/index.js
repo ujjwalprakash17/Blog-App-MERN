@@ -5,6 +5,12 @@ import userAuthRoutes from "./Routes/userAuthRoutes.js";
 import userDetailsRoutes from "./Routes/userDetailsRoutes.js";
 import userPostRoutes from "./Routes/userPostRoutes.js";
 import connectDB from "./Config/db.js";
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 configDotenv();
@@ -19,6 +25,11 @@ app.use(
 // Increase payload size limit
 app.use(express.json({ limit: "2mb" })); //used to parse json request from client side
 app.use(express.urlencoded({ limit: "2mb", extended: true })); //used to parse url encoded request from postman
+
+
+// Serve static files from Vite's dist directory
+app.use(express.static(path.join(__dirname, 'dist')));
+
 
 //Connecting to MongoDB database
 connectDB();
@@ -41,6 +52,11 @@ app.use("/api/user/", userDetailsRoutes);
 
 //Routes to CRUD the posts of the user
 app.use("/api/post/", userPostRoutes);
+
+// Catch-all handler for all other routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  });
 
 const port = process.env.PORT;
 
